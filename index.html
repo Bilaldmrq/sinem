@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etsy Otomasyon - API'siz Ürün Takip</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .add-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        input[type="text"], input[type="number"], input[type="url"] {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        button {
+            padding: 12px 24px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .search-section {
+            margin-bottom: 30px;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .product-card {
+            background: #fff;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        
+        .product-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            word-wrap: break-word;
+        }
+        
+        .product-url {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 13px;
+            display: block;
+            margin-bottom: 10px;
+            word-break: break-all;
+        }
+        
+        .product-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: #764ba2;
+            margin: 15px 0;
+        }
+        
+        .product-notes {
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+            margin: 10px 0;
+        }
+        
+        .product-date {
+            font-size: 12px;
+            color: #999;
+            margin-top: 10px;
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-small {
+            padding: 8px 16px;
+            font-size: 12px;
+            flex: 1;
+        }
+        
+        .btn-delete {
+            background: #e74c3c;
+        }
+        
+        .btn-delete:hover {
+            background: #c0392b;
+        }
+        
+        .btn-open {
+            background: #27ae60;
+        }
+        
+        .btn-open:hover {
+            background: #229954;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            color: white;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+        }
+        
+        .empty-state-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .input-group {
+                flex-direction: column;
+            }
+            
+            input[type="text"], input[type="number"], input[type="url"] {
+                width: 100%;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛍️ Etsy Otomasyon Sistemi</h1>
+            <p class="subtitle">API kullanmadan Etsy ürünlerinizi takip edin ve yönetin</p>
+        </header>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-value" id="totalProducts">0</div>
+                <div class="stat-label">Toplam Ürün</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="totalValue">₺0</div>
+                <div class="stat-label">Toplam Değer</div>
+            </div>
+        </div>
+        
+        <div class="search-section">
+            <h3 style="margin-bottom: 10px;">🔍 Etsy'de Ara</h3>
+            <div class="input-group">
+                <input type="text" id="searchQuery" class="search-input" placeholder="Aramak istediğiniz ürünü yazın (ör: vintage gömlek)">
+                <button onclick="searchEtsy()">Etsy'de Ara</button>
+            </div>
+        </div>
+        
+        <div class="add-section">
+            <h3 style="margin-bottom: 15px;">➕ Yeni Ürün Ekle</h3>
+            <div class="input-group">
+                <input type="text" id="productName" placeholder="Ürün adı">
+                <input type="url" id="productUrl" placeholder="Etsy ürün linki">
+            </div>
+            <div class="input-group">
+                <input type="number" id="productPrice" placeholder="Fiyat (₺)" step="0.01">
+                <input type="text" id="productNotes" placeholder="Notlar (opsiyonel)">
+                <button onclick="addProduct()">Ürün Ekle</button>
+            </div>
+        </div>
+        
+        <div>
+            <h3 style="margin-bottom: 15px;">📦 Takip Edilen Ürünler</h3>
+            <div id="productsList" class="products-grid"></div>
+        </div>
+    </div>
+    
+    <script>
+        // LocalStorage'dan ürünleri yükle
+        function loadProducts() {
+            const products = JSON.parse(localStorage.getItem('etsyProducts') || '[]');
+            return products;
+        }
+        
+        // LocalStorage'a ürünleri kaydet
+        function saveProducts(products) {
+            localStorage.setItem('etsyProducts', JSON.stringify(products));
+        }
+        
+        // Ürün ekle
+        function addProduct() {
+            const name = document.getElementById('productName').value.trim();
+            const url = document.getElementById('productUrl').value.trim();
+            const price = parseFloat(document.getElementById('productPrice').value) || 0;
+            const notes = document.getElementById('productNotes').value.trim();
+            
+            if (!name || !url) {
+                alert('Lütfen en azından ürün adı ve URL girin!');
+                return;
+            }
+            
+            const products = loadProducts();
+            const newProduct = {
+                id: Date.now(),
+                name: name,
+                url: url,
+                price: price,
+                notes: notes,
+                addedDate: new Date().toLocaleDateString('tr-TR')
+            };
+            
+            products.push(newProduct);
+            saveProducts(products);
+            
+            // Formu temizle
+            document.getElementById('productName').value = '';
+            document.getElementById('productUrl').value = '';
+            document.getElementById('productPrice').value = '';
+            document.getElementById('productNotes').value = '';
+            
+            renderProducts();
+        }
+        
+        // Ürün sil
+        function deleteProduct(id) {
+            if (!confirm('Bu ürünü silmek istediğinizden emin misiniz?')) {
+                return;
+            }
+            
+            let products = loadProducts();
+            products = products.filter(p => p.id !== id);
+            saveProducts(products);
+            renderProducts();
+        }
+        
+        // Ürünü Etsy'de aç
+        function openProduct(url) {
+            window.open(url, '_blank');
+        }
+        
+        // Etsy'de ara
+        function searchEtsy() {
+            const query = document.getElementById('searchQuery').value.trim();
+            if (!query) {
+                alert('Lütfen arama terimi girin!');
+                return;
+            }
+            
+            const etsySearchUrl = `https://www.etsy.com/search?q=${encodeURIComponent(query)}`;
+            window.open(etsySearchUrl, '_blank');
+        }
+        
+        // Ürünleri göster
+        function renderProducts() {
+            const products = loadProducts();
+            const container = document.getElementById('productsList');
+            
+            // İstatistikleri güncelle
+            document.getElementById('totalProducts').textContent = products.length;
+            const totalValue = products.reduce((sum, p) => sum + (p.price || 0), 0);
+            document.getElementById('totalValue').textContent = '₺' + totalValue.toFixed(2);
+            
+            if (products.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state" style="grid-column: 1/-1;">
+                        <div class="empty-state-icon">📭</div>
+                        <h3>Henüz ürün eklenmemiş</h3>
+                        <p>Yukarıdaki formu kullanarak Etsy ürünlerini takip etmeye başlayın!</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = products.map(product => `
+                <div class="product-card">
+                    <div class="product-name">${escapeHtml(product.name)}</div>
+                    <a href="${escapeHtml(product.url)}" target="_blank" class="product-url" title="${escapeHtml(product.url)}">
+                        ${escapeHtml(product.url.substring(0, 50))}${product.url.length > 50 ? '...' : ''}
+                    </a>
+                    ${product.price > 0 ? `<div class="product-price">₺${product.price.toFixed(2)}</div>` : ''}
+                    ${product.notes ? `<div class="product-notes">"${escapeHtml(product.notes)}"</div>` : ''}
+                    <div class="product-date">Eklenme: ${product.addedDate}</div>
+                    <div class="product-actions">
+                        <button class="btn-small btn-open" onclick="openProduct('${escapeHtml(product.url)}')">
+                            🔗 Aç
+                        </button>
+                        <button class="btn-small btn-delete" onclick="deleteProduct(${product.id})">
+                            🗑️ Sil
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // XSS koruması için HTML escape
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        // Enter tuşu ile form gönderme
+        document.getElementById('productName').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') addProduct();
+        });
+        
+        document.getElementById('productUrl').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') addProduct();
+        });
+        
+        document.getElementById('productPrice').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') addProduct();
+        });
+        
+        document.getElementById('productNotes').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') addProduct();
+        });
+        
+        document.getElementById('searchQuery').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') searchEtsy();
+        });
+        
+        // Sayfa yüklendiğinde ürünleri göster
+        renderProducts();
+    </script>
+</body>
+</html>
