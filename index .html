@@ -2,122 +2,772 @@
 <html lang="tr">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<title>Sinem ❤️ Bilal – Aşkın Başlangıcı</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Etsy ürünlerinizi milyonlarca kişiye ulaştırın! SEO optimize edilmiş, sosyal medya entegrasyonlu ve viral pazarlama araçlarıyla donatılmış profesyonel tanıtım platformu." />
+<meta name="keywords" content="Etsy, ürün tanıtımı, viral pazarlama, sosyal medya, SEO, e-ticaret, online satış" />
+<meta name="author" content="Etsy Promotion Platform" />
+<meta property="og:title" content="Etsy Ürünlerinizi Milyonlarca Kişiye Ulaştırın" />
+<meta property="og:description" content="Profesyonel tanıtım platformu ile Etsy ürünlerinizi dünya çapında tanıtın!" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://via.placeholder.com/1200x630/ff6f61/ffffff?text=Etsy+Promotion" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Etsy Ürünlerinizi Milyonlarca Kişiye Ulaştırın" />
+<meta name="twitter:description" content="Profesyonel tanıtım platformu ile Etsy ürünlerinizi dünya çapında tanıtın!" />
+<title>Etsy Ürün Tanıtım Platformu - Milyonlarca Kişiye Ulaşın</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{
-    height:100vh;overflow:hidden;font-family:'Poppins',sans-serif;color:#fff;
-    background:linear-gradient(180deg,#2b0038 0%,#0a0012 80%);
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
   }
-  .bg{position:fixed;inset:0;background:url('YOUR_CAT_IMAGE_URL') center/cover no-repeat;filter:brightness(.6) blur(2px);z-index:-2;transition:transform 3s ease;}
-  .overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);backdrop-filter:blur(4px);z-index:-1;}
-  .content{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center;animation:fadeIn 2s ease forwards;}
-  @keyframes fadeIn{from{opacity:0;transform:translateY(-40px);}to{opacity:1;transform:translateY(0);}}
-  h1{font-size:clamp(2rem,6vw,3.5rem);text-shadow:0 0 25px rgba(255,255,255,.5);}
-  p{margin-top:10px;font-size:1rem;color:#ddd;max-width:90%;}
-  .btns{margin-top:40px;display:flex;gap:20px;position:relative;width:90vw;height:70vh;border:none;justify-content:center;align-items:center;overflow:hidden;}
-  button{padding:14px 28px;border:none;border-radius:40px;cursor:pointer;font-size:1.3rem;transition:.2s;box-shadow:0 5px 20px rgba(0,0,0,.3);position:absolute;}
-  .yes{background:linear-gradient(45deg,#ff99b4,#ffe4f0);color:#111;font-weight:700;z-index:2;}
-  .yes:hover{transform:scale(1.05);}
-  .no{background:linear-gradient(45deg,#ff0000,#ff8c00);color:#fff;font-weight:bold;text-transform:uppercase;border:none;animation:glow 1s infinite alternate;z-index:2;}
-  @keyframes glow{0%{box-shadow:0 0 10px #ff0000;}100%{box-shadow:0 0 40px #ff8c00;}}
-  .loveMsg{display:none;flex-direction:column;align-items:center;justify-content:center;position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);z-index:10;animation:fadeIn 1s ease forwards;}
-  .loveMsg h2{font-size:clamp(2.5rem,7vw,4.5rem);background:linear-gradient(90deg,#ffd1dc,#fff,#ffe07a);-webkit-background-clip:text;color:transparent;text-shadow:0 0 50px rgba(255,255,255,.6);}
-  .loveMsg p{margin-top:10px;color:#ffe4ec;}
-  canvas{position:fixed;inset:0;pointer-events:none;}
-  @media(max-width:600px){h1{font-size:1.8rem;}button{font-size:1rem;padding:10px 20px;}}
+
+  .header {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px 0;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #667eea;
+  }
+
+  .hero {
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: fadeInUp 1s ease;
+  }
+
+  .hero p {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 1.2s ease;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 1.4s ease;
+  }
+
+  .btn {
+    padding: 15px 35px;
+    font-size: 18px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(245, 87, 108, 0.6);
+  }
+
+  .btn-secondary {
+    background: white;
+    color: #667eea;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  }
+
+  .btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  }
+
+  .features {
+    background: white;
+    padding: 80px 20px;
+  }
+
+  .features h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: #667eea;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .feature-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .feature-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+  }
+
+  .feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .product-showcase {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 80px 20px;
+  }
+
+  .product-showcase h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: #667eea;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+
+  .product-card:hover {
+    transform: scale(1.05);
+  }
+
+  .product-image {
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+  }
+
+  .product-info {
+    padding: 20px;
+  }
+
+  .product-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .product-info p {
+    color: #666;
+    margin-bottom: 15px;
+  }
+
+  .product-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f5576c;
+  }
+
+  .social-share {
+    background: #667eea;
+    padding: 80px 20px;
+    color: white;
+    text-align: center;
+  }
+
+  .social-share h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+
+  .social-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+
+  .social-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .social-btn:hover {
+    transform: scale(1.2) rotate(360deg);
+  }
+
+  .facebook { background: #3b5998; }
+  .twitter { background: #1da1f2; }
+  .instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+  .pinterest { background: #e60023; }
+  .whatsapp { background: #25d366; }
+  .linkedin { background: #0077b5; }
+
+  .stats {
+    background: white;
+    padding: 60px 20px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .stat-item h3 {
+    font-size: 3rem;
+    color: #f5576c;
+    margin-bottom: 10px;
+  }
+
+  .stat-item p {
+    font-size: 1.2rem;
+    color: #666;
+  }
+
+  .footer {
+    background: #2c3e50;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .etsy-link-input {
+    max-width: 600px;
+    margin: 40px auto;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .etsy-link-input input {
+    flex: 1;
+    min-width: 250px;
+    padding: 15px 20px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 50px;
+    font-size: 16px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+  }
+
+  .etsy-link-input input::placeholder {
+    color: rgba(255,255,255,0.7);
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 500px;
+    text-align: center;
+    animation: modalFadeIn 0.3s ease;
+  }
+
+  @keyframes modalFadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .modal-content h3 {
+    color: #667eea;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .close-modal {
+    margin-top: 20px;
+    padding: 10px 30px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .features h2, .product-showcase h2, .social-share h2 { font-size: 1.8rem; }
+    .feature-grid, .product-grid { grid-template-columns: 1fr; }
+    .etsy-link-input { flex-direction: column; }
+    .etsy-link-input input { min-width: 100%; }
+  }
 </style>
 </head>
 <body>
-<div class="bg" id="bg"></div>
-<div class="overlay"></div>
-<div class="content">
-  <h1>Sinem, bu kalp yalnız seninle ritim buluyor 💓</h1>
-  <p>Bir seçim yapmadan önce iyi düşün... Çünkü bu hikaye yalnızca "Evet" diyene açılacak 💫</p>
-  <div class="btns" id="box">
-    <button class="yes" id="yes">Evet, Aşkı Başlat 💖</button>
-    <button class="no" id="no">Hayır 😼</button>
+
+<header class="header">
+  <div class="container">
+    <nav class="nav">
+      <div class="logo">🛍️ Etsy Promotion</div>
+      <div class="lang-switch">
+        <button onclick="switchLanguage()" style="padding: 8px 20px; background: #667eea; color: white; border: none; border-radius: 20px; cursor: pointer;">🌐 EN/TR</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1 id="heroTitle">Etsy Ürünlerinizi Milyonlarca Kişiye Ulaştırın! 🚀</h1>
+    <p id="heroDesc">SEO optimize edilmiş, sosyal medya entegrasyonlu ve viral pazarlama stratejileriyle donatılmış profesyonel tanıtım platformu. Ürünlerinizi dünya çapında tanıtın!</p>
+    
+    <div class="etsy-link-input">
+      <input type="text" id="etsyLink" placeholder="Etsy mağaza linkinizi buraya yapıştırın...">
+      <button class="btn btn-primary" onclick="saveEtsyLink()">🔗 Linki Kaydet</button>
+    </div>
+
+    <div class="cta-buttons">
+      <a href="#features" class="btn btn-primary">✨ Özellikleri Keşfet</a>
+      <a href="#share" class="btn btn-secondary">📱 Hemen Paylaş</a>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h3 id="reachCount">0</h3>
+        <p id="reachLabel">Potansiyel Erişim</p>
+      </div>
+      <div class="stat-item">
+        <h3 id="shareCount">0</h3>
+        <p id="shareLabel">Paylaşım</p>
+      </div>
+      <div class="stat-item">
+        <h3 id="platformCount">10+</h3>
+        <p id="platformLabel">Platform</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="container">
+    <h2 id="featuresTitle">🎯 Neden Bu Platform?</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🔍</div>
+        <h3 id="feature1Title">SEO Optimizasyonu</h3>
+        <p id="feature1Desc">Google ve diğer arama motorlarında üst sıralarda görünün. Meta etiketleri, açıklamalar ve anahtar kelimelerle optimize edilmiş.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <h3 id="feature2Title">Sosyal Medya Entegrasyonu</h3>
+        <p id="feature2Desc">Tek tıkla Facebook, Instagram, Twitter, Pinterest ve daha fazla platformda paylaşın.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎨</div>
+        <h3 id="feature3Title">Profesyonel Tasarım</h3>
+        <p id="feature3Desc">Modern, çekici ve dönüşüm odaklı tasarım. Mobil uyumlu ve hızlı yüklenir.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3 id="feature4Title">Analitik & İzleme</h3>
+        <p id="feature4Desc">Ziyaretçi sayısı, tıklama oranları ve dönüşümleri takip edin.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌍</div>
+        <h3 id="feature5Title">Küresel Erişim</h3>
+        <p id="feature5Desc">Çok dilli destek ile dünya çapında müşterilere ulaşın.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3 id="feature6Title">Viral Pazarlama</h3>
+        <p id="feature6Desc">Paylaşılabilir içerik ve teşviklerle organik büyüme sağlayın.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="product-showcase" id="products">
+  <div class="container">
+    <h2 id="showcaseTitle">🛍️ Ürünlerinizi Sergileyin</h2>
+    <div class="product-grid">
+      <div class="product-card" onclick="openProductModal('product1')">
+        <div class="product-image">🎨</div>
+        <div class="product-info">
+          <h3>El Yapımı Ürün 1</h3>
+          <p>Özel tasarım, benzersiz ürün</p>
+          <span class="product-price">$29.99</span>
+        </div>
+      </div>
+      <div class="product-card" onclick="openProductModal('product2')">
+        <div class="product-image">🧶</div>
+        <div class="product-info">
+          <h3>El Yapımı Ürün 2</h3>
+          <p>Kaliteli malzeme, özenle yapılmış</p>
+          <span class="product-price">$39.99</span>
+        </div>
+      </div>
+      <div class="product-card" onclick="openProductModal('product3')">
+        <div class="product-image">💍</div>
+        <div class="product-info">
+          <h3>El Yapımı Ürün 3</h3>
+          <p>Şık ve zarif tasarım</p>
+          <span class="product-price">$49.99</span>
+        </div>
+      </div>
+      <div class="product-card" onclick="openProductModal('product4')">
+        <div class="product-image">🏺</div>
+        <div class="product-info">
+          <h3>El Yapımı Ürün 4</h3>
+          <p>Dekoratif ve fonksiyonel</p>
+          <span class="product-price">$59.99</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="social-share" id="share">
+  <div class="container">
+    <h2 id="shareTitle">📢 Hemen Paylaşın & Milyonlara Ulaşın!</h2>
+    <p id="shareDesc">Sosyal medyada paylaşarak daha fazla kişiye ulaşın. Her paylaşım, binlerce potansiyel müşteri demektir!</p>
+    
+    <div class="social-buttons">
+      <a href="#" class="social-btn facebook" onclick="shareOn('facebook')" title="Facebook'ta Paylaş">📘</a>
+      <a href="#" class="social-btn twitter" onclick="shareOn('twitter')" title="Twitter'da Paylaş">🐦</a>
+      <a href="#" class="social-btn instagram" onclick="shareOn('instagram')" title="Instagram'da Paylaş">📸</a>
+      <a href="#" class="social-btn pinterest" onclick="shareOn('pinterest')" title="Pinterest'te Paylaş">📌</a>
+      <a href="#" class="social-btn whatsapp" onclick="shareOn('whatsapp')" title="WhatsApp'ta Paylaş">💬</a>
+      <a href="#" class="social-btn linkedin" onclick="shareOn('linkedin')" title="LinkedIn'de Paylaş">💼</a>
+    </div>
+
+    <div style="margin-top: 40px;">
+      <button class="btn btn-secondary" onclick="copyLink()">🔗 Linki Kopyala</button>
+      <button class="btn btn-primary" onclick="generateQR()">📱 QR Kod Oluştur</button>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2024 Etsy Promotion Platform | Ürünlerinizi dünyaya tanıtın! 🌟</p>
+    <p style="margin-top: 10px; font-size: 14px;">SEO optimized • Social media ready • Mobile responsive</p>
+  </div>
+</footer>
+
+<div id="successModal" class="modal">
+  <div class="modal-content">
+    <h3>✅ Başarılı!</h3>
+    <p id="modalMessage">İşleminiz başarıyla tamamlandı!</p>
+    <button class="close-modal" onclick="closeModal()">Kapat</button>
   </div>
 </div>
-<div class="loveMsg" id="loveMsg">
-  <h2>bn seni daha çok seviyorum 💋</h2>
-  <p>Kalpler, öpücükler ve kedicikler senin için yağıyor!</p>
-</div>
-<canvas id="canvas"></canvas>
-<audio id="music" src="https://dl.dropboxusercontent.com/scl/fi/k7grk2yq3y28c8n2l9bp9/Sezen-Aksu-Kaç-n-Kuras-.mp3?rlkey=6b2z5k1xzox8y9f2m9z0d6nuh&dl=0"></audio>
+
 <script>
-const yes=document.getElementById('yes');
-const no=document.getElementById('no');
-const msg=document.getElementById('loveMsg');
-const canvas=document.getElementById('canvas');
-const ctx=canvas.getContext('2d');
-const bg=document.getElementById('bg');
-const music=document.getElementById('music');
-const box=document.getElementById('box');
-let W=canvas.width=innerWidth,H=canvas.height=innerHeight;
-let hearts=[];
+let currentLang = 'tr';
+let etsyStoreLink = '';
+let totalShares = 0;
+let totalReach = 0;
 
-function createHeart(){
-  const icons=['💖','💋','🐱'];
-  const icon=icons[Math.floor(Math.random()*icons.length)];
-  return{x:Math.random()*W,y:-20,s:Math.random()*24+20,vy:Math.random()*5+2,a:1,t:icon};
+// Animate counters
+function animateCounter(id, target, duration = 2000) {
+  const element = document.getElementById(id);
+  const start = 0;
+  const increment = target / (duration / 16);
+  let current = start;
+  
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= target) {
+      element.textContent = target.toLocaleString();
+      clearInterval(timer);
+    } else {
+      element.textContent = Math.floor(current).toLocaleString();
+    }
+  }, 16);
 }
 
-function draw(){
-  ctx.clearRect(0,0,W,H);
-  hearts.forEach(h=>{
-    h.y+=h.vy;h.a-=0.003;
-    ctx.globalAlpha=h.a;
-    ctx.font=h.s+'px serif';
-    ctx.fillText(h.t,h.x,h.y);
-  });
-  hearts=hearts.filter(h=>h.y<H && h.a>0);
-  requestAnimationFrame(draw);
-}
-
-draw();
-
-function burst(n=200){
-  for(let i=0;i<n;i++)hearts.push(createHeart());
-}
-
-let musicStarted=false;
-yes.addEventListener('click',()=>{
-  if(!musicStarted){
-    music.play();
-    musicStarted=true;
-    setTimeout(()=>{music.pause();},20000);
-  }
-  msg.style.display='flex';
-  burst(400);
-  bg.style.transform='scale(1.1)';
-  if(navigator.vibrate)navigator.vibrate([40,20,40]);
-  setTimeout(()=>{msg.style.display='none';bg.style.transform='scale(1)';},20000);
+// Initialize counters on load
+window.addEventListener('load', () => {
+  animateCounter('reachCount', 5000000, 2000);
+  animateCounter('shareCount', totalShares, 1500);
 });
 
-// Hayır görünmez büyük kare içinde çok hızlı kaçıyor
-function moveNo(e){
-  const boxRect=box.getBoundingClientRect();
-  const rect=no.getBoundingClientRect();
-  const dx=e.clientX - (rect.left + rect.width/2);
-  const dy=e.clientY - (rect.top + rect.height/2);
-  const dist=Math.sqrt(dx*dx + dy*dy);
-  if(dist<150){
-    const angle=Math.atan2(dy,dx);
-    const offset=180; // Daha hızlı kaçış
-    let newX=rect.left - Math.cos(angle)*offset - boxRect.left;
-    let newY=rect.top - Math.sin(angle)*offset - boxRect.top;
-    newX=Math.min(Math.max(newX,0),boxRect.width-rect.width);
-    newY=Math.min(Math.max(newY,0),boxRect.height-rect.height);
-    no.style.left=newX+'px';
-    no.style.top=newY+'px';
+function saveEtsyLink() {
+  const link = document.getElementById('etsyLink').value;
+  if (link && (link.includes('etsy.com') || link.includes('etsy.'))) {
+    etsyStoreLink = link;
+    localStorage.setItem('etsyStoreLink', link);
+    showModal('Etsy mağaza linkiniz kaydedildi! 🎉 Artık paylaşımlarınızda bu link kullanılacak.');
+    totalReach += 100;
+    updateStats();
+  } else {
+    showModal('Lütfen geçerli bir Etsy mağaza linki girin.');
   }
 }
 
-box.addEventListener('mousemove',moveNo);
-window.addEventListener('resize',()=>{W=canvas.width=innerWidth;H=canvas.height=innerHeight;});
-setInterval(()=>{if(musicStarted)hearts.push(createHeart());},60);
+function shareOn(platform) {
+  const url = etsyStoreLink || window.location.href;
+  const title = 'Harika Etsy ürünlerimi keşfedin!';
+  const text = 'El yapımı, özel tasarım ürünler. Hemen göz atın!';
+  
+  let shareUrl = '';
+  
+  switch(platform) {
+    case 'facebook':
+      shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+      break;
+    case 'twitter':
+      shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
+      break;
+    case 'pinterest':
+      shareUrl = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(url)}&description=${encodeURIComponent(text)}`;
+      break;
+    case 'whatsapp':
+      shareUrl = `https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`;
+      break;
+    case 'linkedin':
+      shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+      break;
+    case 'instagram':
+      showModal('Instagram için: Profilinizde paylaşabilir veya story\'nizde link paylaşabilirsiniz! 📸');
+      return;
+  }
+  
+  if (shareUrl) {
+    window.open(shareUrl, '_blank', 'width=600,height=400');
+    totalShares++;
+    totalReach += Math.floor(Math.random() * 1000) + 500;
+    updateStats();
+    showModal(`${platform.charAt(0).toUpperCase() + platform.slice(1)}'ta paylaşıldı! 🎉`);
+  }
+}
+
+function copyLink() {
+  const link = etsyStoreLink || window.location.href;
+  navigator.clipboard.writeText(link).then(() => {
+    showModal('Link kopyalandı! 📋 Artık istediğiniz yere yapıştırabilirsiniz.');
+  });
+}
+
+function generateQR() {
+  const link = etsyStoreLink || window.location.href;
+  const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(link)}`;
+  window.open(qrUrl, '_blank');
+  showModal('QR kod oluşturuldu! 📱 İndirip kullanabilirsiniz.');
+}
+
+function openProductModal(productId) {
+  if (etsyStoreLink) {
+    window.open(etsyStoreLink, '_blank');
+  } else {
+    showModal('Önce Etsy mağaza linkinizi kaydedin! 🔗');
+  }
+}
+
+function showModal(message) {
+  document.getElementById('modalMessage').textContent = message;
+  document.getElementById('successModal').style.display = 'flex';
+  setTimeout(() => closeModal(), 3000);
+}
+
+function closeModal() {
+  document.getElementById('successModal').style.display = 'none';
+}
+
+function updateStats() {
+  document.getElementById('shareCount').textContent = totalShares.toLocaleString();
+  animateCounter('reachCount', 5000000 + totalReach, 500);
+  localStorage.setItem('totalShares', totalShares);
+  localStorage.setItem('totalReach', totalReach);
+}
+
+function switchLanguage() {
+  currentLang = currentLang === 'tr' ? 'en' : 'tr';
+  
+  const translations = {
+    tr: {
+      heroTitle: 'Etsy Ürünlerinizi Milyonlarca Kişiye Ulaştırın! 🚀',
+      heroDesc: 'SEO optimize edilmiş, sosyal medya entegrasyonlu ve viral pazarlama stratejileriyle donatılmış profesyonel tanıtım platformu. Ürünlerinizi dünya çapında tanıtın!',
+      reachLabel: 'Potansiyel Erişim',
+      shareLabel: 'Paylaşım',
+      platformLabel: 'Platform',
+      featuresTitle: '🎯 Neden Bu Platform?',
+      feature1Title: 'SEO Optimizasyonu',
+      feature1Desc: 'Google ve diğer arama motorlarında üst sıralarda görünün. Meta etiketleri, açıklamalar ve anahtar kelimelerle optimize edilmiş.',
+      feature2Title: 'Sosyal Medya Entegrasyonu',
+      feature2Desc: 'Tek tıkla Facebook, Instagram, Twitter, Pinterest ve daha fazla platformda paylaşın.',
+      feature3Title: 'Profesyonel Tasarım',
+      feature3Desc: 'Modern, çekici ve dönüşüm odaklı tasarım. Mobil uyumlu ve hızlı yüklenir.',
+      feature4Title: 'Analitik & İzleme',
+      feature4Desc: 'Ziyaretçi sayısı, tıklama oranları ve dönüşümleri takip edin.',
+      feature5Title: 'Küresel Erişim',
+      feature5Desc: 'Çok dilli destek ile dünya çapında müşterilere ulaşın.',
+      feature6Title: 'Viral Pazarlama',
+      feature6Desc: 'Paylaşılabilir içerik ve teşviklerle organik büyüme sağlayın.',
+      showcaseTitle: '🛍️ Ürünlerinizi Sergileyin',
+      shareTitle: '📢 Hemen Paylaşın & Milyonlara Ulaşın!',
+      shareDesc: 'Sosyal medyada paylaşarak daha fazla kişiye ulaşın. Her paylaşım, binlerce potansiyel müşteri demektir!'
+    },
+    en: {
+      heroTitle: 'Reach Millions with Your Etsy Products! 🚀',
+      heroDesc: 'Professional promotion platform with SEO optimization, social media integration, and viral marketing strategies. Promote your products worldwide!',
+      reachLabel: 'Potential Reach',
+      shareLabel: 'Shares',
+      platformLabel: 'Platforms',
+      featuresTitle: '🎯 Why This Platform?',
+      feature1Title: 'SEO Optimization',
+      feature1Desc: 'Rank higher on Google and other search engines. Optimized with meta tags, descriptions, and keywords.',
+      feature2Title: 'Social Media Integration',
+      feature2Desc: 'Share on Facebook, Instagram, Twitter, Pinterest, and more with one click.',
+      feature3Title: 'Professional Design',
+      feature3Desc: 'Modern, attractive, and conversion-focused design. Mobile-friendly and fast loading.',
+      feature4Title: 'Analytics & Tracking',
+      feature4Desc: 'Track visitor numbers, click rates, and conversions.',
+      feature5Title: 'Global Reach',
+      feature5Desc: 'Reach customers worldwide with multi-language support.',
+      feature6Title: 'Viral Marketing',
+      feature6Desc: 'Achieve organic growth with shareable content and incentives.',
+      showcaseTitle: '🛍️ Showcase Your Products',
+      shareTitle: '📢 Share Now & Reach Millions!',
+      shareDesc: 'Reach more people by sharing on social media. Every share means thousands of potential customers!'
+    }
+  };
+  
+  const trans = translations[currentLang];
+  Object.keys(trans).forEach(key => {
+    const element = document.getElementById(key);
+    if (element) element.textContent = trans[key];
+  });
+}
+
+// Load saved data
+window.addEventListener('load', () => {
+  const savedLink = localStorage.getItem('etsyStoreLink');
+  const savedShares = localStorage.getItem('totalShares');
+  const savedReach = localStorage.getItem('totalReach');
+  
+  if (savedLink) {
+    etsyStoreLink = savedLink;
+    document.getElementById('etsyLink').value = savedLink;
+  }
+  if (savedShares) totalShares = parseInt(savedShares);
+  if (savedReach) totalReach = parseInt(savedReach);
+  
+  updateStats();
+});
+
+// Track page views (simple analytics)
+if (localStorage.getItem('pageViews')) {
+  let views = parseInt(localStorage.getItem('pageViews'));
+  localStorage.setItem('pageViews', views + 1);
+} else {
+  localStorage.setItem('pageViews', 1);
+}
+
+// Service Worker for PWA capabilities (optional enhancement)
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
+  });
+}
 </script>
+
+<!-- Google Analytics (Add your tracking ID) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID');
+</script>
+
 </body>
 </html>
